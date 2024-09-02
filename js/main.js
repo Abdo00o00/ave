@@ -2,7 +2,7 @@
 $(document).ready(function(){
 
 
-  //functions//////////////////////////////
+  //functions//////////////////////////////ظ
   //
   //
   // start background color when scrolling and resizing
@@ -16,6 +16,8 @@ $(document).ready(function(){
       console.log("y");
 
     }
+
+
     if ($(window).scrollTop() > 30 || window.innerWidth < 1199) {
       $('header').css({'background-color': 'white'});
       console.log("n");
