@@ -17,12 +17,12 @@ $(document).ready(function(){
 
     }
     if ($(window).scrollTop() > 30 || window.innerWidth < 1199) {
-      $('header').css({'background-color': 'white','border-bottom' : '1px solid rgba(0, 0, 0, .2)'});
+      $('header').css({'background-color': 'white'});
       $('header').css('border-bottom' , '1px solid black !important');
       console.log("n");
 
     } else {
-      $('header').css({'background-color': 'transparent' , 'border-bottom' : '1px solid rgba(0, 0, 0, 0)'});
+      $('header').css({'background-color': 'transparent'});
       console.log("y");
 
     }
