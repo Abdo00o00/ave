@@ -18,7 +18,6 @@ $(document).ready(function(){
     }
     if ($(window).scrollTop() > 30 || window.innerWidth < 1199) {
       $('header').css({'background-color': 'white'});
-      $('header').css('border-bottom' , '1px solid black !important');
       console.log("n");
 
     } else {
