@@ -7,13 +7,22 @@ $(document).ready(function(){
   //
   // start background color when scrolling and resizing
   function updateNavbarBackground() {
+    if (window.innerWidth < 992) {
+      $('header').css('border-bottom' , '1px solid rgba(0, 0, 0, .2)');
+      console.log("n");
+
+    } else {
+      $('header').css('border-bottom' , '1px solid rgba(0, 0, 0, 0) ');
+      console.log("y");
+
+    }
     if ($(window).scrollTop() > 30 || window.innerWidth < 1199) {
       $('header').css({'background-color': 'white','border-bottom' : '1px solid rgba(0, 0, 0, .2)'});
       $('header').css('border-bottom' , '1px solid black !important');
       console.log("n");
 
     } else {
-      $('header').css({'background-color': 'transparent' , 'border-bottom' : 'none !important'});
+      $('header').css({'background-color': 'transparent' , 'border-bottom' : '1px solid rgba(0, 0, 0, 0)'});
       console.log("y");
 
     }
@@ -22,17 +31,17 @@ $(document).ready(function(){
   // end background color when scrolling and resizing
 
   //give nav border when resizing.. a border
-  function takenavborder() {
-    if (window.innerWidth < 992) {
-      $('header').css('border-bottom' , '1px solid rgba(0, 0, 0, .2)');
-      console.log("n");
+  // function takenavborder() {
+  //   if (window.innerWidth < 992) {
+  //     $('header').css('border-bottom' , '1px solid rgba(0, 0, 0, .2)');
+  //     console.log("n");
 
-    } else {
-      $('header').css('border-bottom' , 'none ');
-      console.log("y");
+  //   } else {
+  //     $('header').css('border-bottom' , '1px solid rgba(0, 0, 0, 0) ');
+  //     console.log("y");
 
-    }
-  }
+  //   }
+  // }
 
 
   // Function to get the height of the body and log scroll information
@@ -59,7 +68,7 @@ $(document).ready(function(){
 
   //
   // Run functions when the page loads/////////////////////////////////
-  takenavborder();
+  // takenavborder();
   logBodyHeightAndScroll();
   animateDivOnScroll();
   // التحقق من الخلفية عند تحميل الصفحة
@@ -80,7 +89,7 @@ $(document).ready(function(){
   // تحديث الخلفية عند تغيير حجم الشاشة
   $(window).resize( function() {
     updateNavbarBackground();
-    takenavborder();
+    // takenavborder();
   });
 
 
