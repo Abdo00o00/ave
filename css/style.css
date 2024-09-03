@@ -668,18 +668,45 @@ footer .footer-img {
 /* --------------------------------------------------------end footer */
 /* -- */
 /* -- */
-/* ----------------------------------------------------------start totop div */
+/* ----------------------------------------------------------start to top div */
+.fa-animated span {
+    cursor: pointer;
+    line-height: 27px;
+    font-size: 13px;
+    font-family: "Syne", sans-serif;
+}
+.fa-animated {
+    width: 220px;
+    height: auto;
+    transform: rotateZ(90deg);
+    bottom: 76px;
+    right: -75px;
+    z-index: 2;
+
+}
+.home-animated {
+    transform: translateY(-50px);
+    transition: all 0.2s ease;
+}
 #animatedDiv {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    height: 50px;
-    background-color: #3498db;
-    width: 1px;
-    transition: width 0.5s ease;
+    height: 1px;
+    background-color: rgba(0, 0, 0, .4);
+    transition: width 0.01s ease;
+    z-index: 2;
+    transform: rotateZ(-180deg);
+}
+#animatedDiv2 {
+    position: absolute;
+    top: auto;
+    bottom: auto;
+    left: 60px;
+    height: 1px;
+    width: 94px;
+    background-color: rgba(0, 0, 0, .2);
+    z-index: -1;
 }
 
-/* ----------------------------------------------------------end totop div */
+/* ----------------------------------------------------------end to top div */
 /* -- */
 /* -- */
 /* ----------------------------------------------------start opening div // starting div */
@@ -818,8 +845,6 @@ footer .footer-img {
 /* -- */
 /* ----------------------------------------------------start reponsive for all */
 
-@media screen and (max-width: 1260px) {}
-
 @media screen and (max-width: 1199) {
     header {
         border-bottom: #000 1px solid;
@@ -870,3 +895,8 @@ footer .footer-img {
 }
 
 /* ----------------------------------------------------end reponsive for all */
+/* -- */
+/* -- */
+/* -- */
+/*                                                              "the end sweety"
+*/
