@@ -437,29 +437,79 @@ h1 {
 /* -- */
 /* -- */
 /* ----------------------------------------------------start section 4 carousel //some photos */
+#carouselSec {
+    font-family: "Syne", sans-serif;
+}
+
+#carouselSec li img {
+    width: 102% !important;
+    height: 100% !important;
+    object-fit: cover;
+    
+}
+
 #carouselSec img {
     transition: all 0.3s ease-in-out;
 }
 
-#carouselSec img:hover {
-    transform: scale(1.1);
+#carouselSec button img {
+    transform: scale(1.5);
+}
+
+#carouselSec .my-carousel-item:hover .img-label{
+    transform: translateY(-100px);
+}
+
+#carouselSec .my-carousel-item:hover img{
+    transform: scale(1.15) !important;
 }
 
 #carouselSec .PreviousNextbuttons {
     height: 40px;
 }
 
-#carouselSec .carousel-item {
-    width: 282px;
-    height: 282px;
-    overflow: hidden !important;
+#carouselSec .img-label span {
+    font-size: 18px;
+    color: #000;
+    font-weight: 700;
+    line-height: 1.3;
 }
 
-#carouselSec .carousel-control-prev {
-    right: 50px;
-    left: auto;
+#carouselSec .img-label p {
+    font-size: 12px;
+    margin-bottom: 5px;
+    color: #868a9b;
+    font-weight: 500;
 }
 
+#carouselSec ul {
+    transition: all 0.3s ease-in-out;
+}
+#carouselSec .carousel-progress-chiled {
+    position: absolute;
+    height: 1px;
+    background-color: rgba(0, 0, 0, .5);
+    left: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    z-index: 2;
+}
+#carouselSec .carousel-progress {
+    width: 100px;
+    height: 1px;
+    background-color: rgba(0, 0, 0, .2);
+    position: relative;
+}
+#carouselSec .img-label {
+    bottom: -80px;
+    left: 20px;
+    right: 20px;
+    padding: 8px 20px 13px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+    z-index: 2;
+    
+}
 /* ----------------------------------------------------end section 4 carousel //some photos */
 /* -- */
 /* -- */
@@ -580,6 +630,7 @@ h1 {
 #Blog .content-blog ul {
     background-color: #eaeaea;
     padding: 15px 30px;
+    /* transform: translateX(); */
 }
 
 #Blog .content-blog div {
@@ -838,6 +889,53 @@ footer .footer-img {
     }
 }
 
+
+
+
+
+
+@keyframes carousel-translate-768 {
+    0% {
+        transform: translateX(0);
+    }
+    16% {
+        transform: translateX(0);
+    }
+    17% {
+        transform: translateX(-100%);
+    }
+    33% {
+        transform: translateX(-100%);
+    }
+    34% {
+        transform: translateX(-200%);
+    }
+    50% {
+        transform: translateX(-200%);
+    }
+    51% {
+        transform: translateX(-300%);
+    }
+    67% {
+        transform: translateX(-300%);
+    }
+    68% {
+        transform: translateX(-400%);
+    }
+    84% {
+        transform: translateX(-400%);
+    }
+    85% {
+        transform: translateX(-500%);
+    }
+    99% {
+        transform: translateX(-500%);
+    }
+    100% {
+        transform: translateX(-600%);
+    }
+    
+}
 /*  ------- end starting div animatoin */
 /* - */
 /* --------end animatoins */
@@ -849,10 +947,19 @@ footer .footer-img {
     header {
         border-bottom: #000 1px solid;
     }
-
+    #carouselSec li {
+        width: 30% !important;
+    }
     #Quality-Services .my-card {
         padding: 45px 25px;
     }
+    #carouselSec .carousel-progress-chiled {
+        width: 20% ;
+    }
+    #carouselSec .my-carousel-item img{
+        height: 390px !important;
+    }
+
 }
 
 @media screen and (max-width: 1040px) {
@@ -888,10 +995,28 @@ footer .footer-img {
     }
 }
 
+@media screen and (max-width: 768px) {
+    #carouselSec .carousel-progress-chiled {
+        width: 17%;
+    }
+    #carouselSec .my-carousel-item img{
+        height: 490px !important;
+    }
+ 
+
+    /* #carouselSec ul {
+        animation: carousel-translate-768 25s ease infinite;
+    } */
+}
+
 @media screen and (max-width: 570px) {
+    #carouselSec .carousel-progress-chiled {
+        width: 17%;
+    }
     .navbar-brandd {
         margin-left: 1rem !important;
     }
+
 }
 
 /* ----------------------------------------------------end reponsive for all */

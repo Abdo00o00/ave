@@ -9,7 +9,7 @@ $(document).ready(function(){
   function updateNavbarBackground() {
     if (window.innerWidth < 992) {
       $('header').css('border-bottom' , '1px solid rgba(0, 0, 0, .2)');
-      console.log("n");
+      // console.log("n");
 
     } else {
       $('header').css('border-bottom' , '1px solid rgba(0, 0, 0, 0) ');
@@ -62,11 +62,130 @@ $(document).ready(function(){
   }
   // end Function to animate the width of the div based on scroll
 
+
+  //function for carousel
+
+  function forcarousel() {
+    let myIndex = 1;
+    let i_n ;
+    if (window.innerWidth < 768) {
+      i_n = (1 -myIndex ) * 100;
+      $("#carouselSec ul").css("transform", `translateX(${i_n}%)`);
+      $("#carouselSec .carousel-progress-chiled").css("width" , myIndex / 6 * 100 + "%");
+    }
+    if (window.innerWidth < 1200 && window.innerWidth > 767) {
+      // myIndex--;
+      i_n = (1 -myIndex ) * 50;
+      $("#carouselSec ul").css("transform", `translateX(${i_n}%)`);
+      $("#carouselSec .carousel-progress-chiled").css("width" , myIndex / 5 * 100 + "%");
+    }
+    if (window.innerWidth > 1200) {
+      // myIndex--;
+      i_n = (1 -myIndex ) * 30;
+      $("#carouselSec ul").css("transform", `translateX(${i_n}%)`);
+      $("#carouselSec .carousel-progress-chiled").css("width" , myIndex / 4 * 100 + "%");
+    }
+    $(".Previous-button").click(function(){
+      if (window.innerWidth < 768) {
+        if (myIndex > 1 && myIndex <= 6) {
+          myIndex--;
+          i_n = (1 -myIndex ) * 100;
+          $("#carouselSec ul").css("transform", `translateX(${i_n}%)`);
+  
+          //code
+          
+          $("#carouselSec .carousel-progress-chiled").css("width" , myIndex / 6 * 100 + "%");
+          $("#carouselSec .carousel-counter").text("0" + myIndex);
+          console.log(myIndex);
+          console.log("previous button");
+        }
+      }
+      if (window.innerWidth < 1200 && window.innerWidth > 767) {
+        if (myIndex > 1 && myIndex <= 5) {
+          myIndex--;
+          i_n = (1 -myIndex ) * 50;
+          $("#carouselSec ul").css("transform", `translateX(${i_n}%)`);
+  
+          //code
+          
+          $("#carouselSec .carousel-progress-chiled").css("width" , myIndex / 5 * 100 + "%");
+          $("#carouselSec .carousel-counter").text("0" + myIndex);
+          // console.log(myIndex);
+          // console.log("previous button");
+        }
+      }
+      if (window.innerWidth > 1200) {
+        if (myIndex > 1 && myIndex <= 4) {
+          myIndex--;
+          i_n = (1 -myIndex ) * 30;
+          $("#carouselSec ul").css("transform", `translateX(${i_n}%)`);
+  
+          //code
+          
+          $("#carouselSec .carousel-progress-chiled").css("width" , myIndex / 4 * 100 + "%");
+          $("#carouselSec .carousel-counter").text("0" + myIndex);
+          console.log(myIndex);
+          console.log("previous button");
+        }
+      }
+    });
+    
+    $(".next-button").click(function(){
+      if (window.innerWidth < 768) {
+        if (myIndex >= 1 && myIndex < 6) {
+          i_n = myIndex * 100;
+          $("#carouselSec ul").css("transform", `translateX(-${i_n}%)`);
+          
+          //code
+          
+          myIndex++;
+          $("#carouselSec .carousel-progress-chiled").css("width" , myIndex / 6 * 100 + "%");
+          $("#carouselSec .carousel-counter").text("0" + myIndex);
+          console.log(myIndex);
+          console.log("next button");
+        } 
+      }
+      if (window.innerWidth < 1200 && window.innerWidth > 767) {
+        if (myIndex >= 1 && myIndex < 5) {
+          i_n = myIndex * 50;
+          $("#carouselSec ul").css("transform", `translateX(-${i_n}%)`);
+          
+          //code
+          
+          myIndex++;
+          $("#carouselSec .carousel-progress-chiled").css("width" , myIndex / 5 * 100 + "%");
+          $("#carouselSec .carousel-counter").text("0" + myIndex);
+          // console.log(myIndex);
+          // console.log("next button");
+        } 
+      }
+      if (window.innerWidth > 1200) {
+        if (myIndex >= 1 && myIndex < 4) {
+          i_n = myIndex * 33.3;
+          $("#carouselSec ul").css("transform", `translateX(-${i_n}%)`);
+          myIndex++;
+    
+          //code
+          
+          $("#carouselSec .carousel-progress-chiled").css("width" , myIndex / 4 * 100 + "%");
+          $("#carouselSec .carousel-counter").text("0" + myIndex);
+          console.log(myIndex);
+          console.log("next button");
+        }
+      }
+      
+    });
+  }
+  // end function for carousel
+
+  
+
   
   // Run functions when the page loads/////////////////////////////////
   logBodyHeightAndScroll();
   animateDivOnScroll();
   updateNavbarBackground();
+  forcarousel();
   // end Run functions when the page loads/////////////////////////////////
 
   
@@ -83,6 +202,7 @@ $(document).ready(function(){
   // when resizing the screen
   $(window).resize( function() {
     updateNavbarBackground();
+    forcarousel();
   });
   //end when resizing the screen
   //
