@@ -178,7 +178,9 @@ $(document).ready(function(){
   }
   // end function for carousel
 
-  
+  function disappearOppeningDiv(){
+    $(".home-start").hide(10000);
+  }
 
   
   // Run functions when the page loads/////////////////////////////////
@@ -186,6 +188,7 @@ $(document).ready(function(){
   animateDivOnScroll();
   updateNavbarBackground();
   forcarousel();
+  disappearOppeningDiv();
   // end Run functions when the page loads/////////////////////////////////
 
   
